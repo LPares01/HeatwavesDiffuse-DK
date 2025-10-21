@@ -10,7 +10,7 @@
 # Experienced Wget Users: add additional command-line flags here
 #   Use the -r (--recursive) option with care
 dir="../data/"
-opts="-N -c -P ${dir}"
+opts="-q -N -c -P ${dir}"
 #
 cert_opt=""
 # If you get a certificate verification error (version 1.10 or higher),
@@ -25,12 +25,12 @@ last_day=${3?Error: last day of month?}
 # download the file(s)
 
 # temperature at 2 m
-wget $cert_opt $opts https://data.rda.ucar.edu/ds633.0/e5.oper.an.sfc/${year}${month}/e5.oper.an.sfc.128_167_2t.ll025sc.${year}${month}0100_${year}${month}${last_day}23.nc
+wget $cert_opt $opts https://osdf-data.gdex.ucar.edu/ncar/gdex/d633000/e5.oper.an.sfc/${year}${month}/e5.oper.an.sfc.128_167_2t.ll025sc.${year}${month}0100_${year}${month}${last_day}23.nc
 
 # u-component of wind at 10 m
-wget $cert_opt $opts https://data.rda.ucar.edu/ds633.0/e5.oper.an.sfc/${year}${month}/e5.oper.an.sfc.128_165_10u.ll025sc.${year}${month}0100_${year}${month}${last_day}23.nc
+wget $cert_opt $opts https://osdf-data.gdex.ucar.edu/ncar/gdex/d633000/e5.oper.an.sfc/${year}${month}/e5.oper.an.sfc.128_165_10u.ll025sc.${year}${month}0100_${year}${month}${last_day}23.nc
 
 # v-component of wind at 10 m
-wget $cert_opt $opts https://data.rda.ucar.edu/ds633.0/e5.oper.an.sfc/${year}${month}/e5.oper.an.sfc.128_166_10v.ll025sc.${year}${month}0100_${year}${month}${last_day}23.nc
+wget $cert_opt $opts https://osdf-data.gdex.ucar.edu/ncar/gdex/d633000/e5.oper.an.sfc/${year}${month}/e5.oper.an.sfc.128_166_10v.ll025sc.${year}${month}0100_${year}${month}${last_day}23.nc
 
 

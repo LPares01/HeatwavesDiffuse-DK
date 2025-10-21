@@ -10,4 +10,4 @@ runs*
 data/samples_*.nc
 data/e5.*.nc
 
-
+.lsf_jobs/
