@@ -43,15 +43,22 @@ num_epochs = 100
 device =  'cuda' if torch.cuda.is_available() else 'cpu'
 
 # define the ml model
-unet_model = UNet((256, 128), 5, 3, label_dim=2, use_diffuse=False)
+# unet_model = UNet((256, 128), 5, 3, label_dim=2, use_diffuse=False)
+unet_model = UNet((64, 32), 5, 3, label_dim=2, use_diffuse=False)
 unet_model.to(device)
 
 # define the datasets
 datadir = "../data/"
-dataset_train = UpscaleDataset(datadir, year_start=train_year_start, year_end=train_year_end,
+# dataset_train = UpscaleDataset(datadir, year_start=train_year_start, year_end=train_year_end,
+#                                constant_variables=["lsm", "z"])
+
+# dataset_test = UpscaleDataset(datadir, year_start=valid_year_start, year_end=valid_year_end,
+#                               constant_variables=["lsm", "z"])
+
+dataset_train = UpscaleDatasetDK(datadir, year_start=train_year_start, year_end=train_year_end,
                                constant_variables=["lsm", "z"])
 
-dataset_test = UpscaleDataset(datadir, year_start=valid_year_start, year_end=valid_year_end,
+dataset_test = UpscaleDatasetDK(datadir, year_start=valid_year_start, year_end=valid_year_end,
                               constant_variables=["lsm", "z"])
 
 dataloader_train = torch.utils.data.DataLoader(
@@ -69,7 +76,9 @@ scaler = torch.cuda.amp.GradScaler()
 optimiser = torch.optim.AdamW(unet_model.parameters(), lr=learning_rate)
 
 # Define the tensorboard writer
-writer = SummaryWriter("./runs_unet")
+
+# writer = SummaryWriter("./runs_unet")
+writer = SummaryWriter("./runs_unet_DK")
 
 loss_fn = torch.nn.MSELoss()
 
@@ -88,7 +97,7 @@ for step in range(num_epochs):
 
     (fig, ax), (base_error, pred_error) = sample_model(
         unet_model, dataloader_test, device=device)
-    fig.savefig('runs_unet/run_03/result_epoch_' + str(step) + '.png')
+    fig.savefig('runs_unet_DK/run_01/result_epoch_' + str(step) + '.png')
 
     writer.add_scalar("Error/base", base_error, step)
     writer.add_scalar("Error/pred", pred_error, step)
