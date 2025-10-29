@@ -25,7 +25,7 @@ train_year_start = 1953
 train_year_end = 1955
 
 valid_year_start = 1956
-valid_year_end = 1957
+valid_year_end = 1956
 
 # %% [markdown]
 # Set up training hyperparameters. We will only run for 10 epochs and we will use the cpu. 
@@ -89,18 +89,25 @@ losses = []
 # Start the training loop. The plots generated will show the coarse res, the predicted, and the truth for a few samples and for different variables. At the start of training the first two columns (coarse res and predicted) look similar. Towards the end of the training, the last two columns (predicted and truth) should look similar. 
 
 # %%
+run_nbr = '02'
 for step in range(num_epochs):
     epoch_loss = train_step(
         unet_model, loss_fn, dataloader_train, optimiser,
         scaler, step, accum, writer, device=device)
     losses.append(epoch_loss)
 
-    (fig, ax), (base_error, pred_error) = sample_model(
-        unet_model, dataloader_test, device=device)
-    fig.savefig('runs_unet_DK/run_01/result_epoch_' + str(step) + '.png')
+    if (step + 0) % 5 == 0:
+        (fig, ax), (base_error, pred_error) = sample_model(
+            unet_model, dataloader_test)
+        fig.savefig(f"runs_unet_DK/run_{run_nbr}/epoch_{step}.png")
+        plt.close(fig)
 
-    writer.add_scalar("Error/base", base_error, step)
-    writer.add_scalar("Error/pred", pred_error, step)
+        writer.add_scalar("Error/base", base_error, step)
+        writer.add_scalar("Error/pred", pred_error, step)
+
+    # save the model
+    if losses[-1] == min(losses):
+        torch.save(unet_model.state_dict(), f"Models_unet_DK/run_{run_nbr}_epoch_{step}.pt")
 
 
 

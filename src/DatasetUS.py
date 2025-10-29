@@ -50,7 +50,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
 
         # Select domain with size 64 x 32 (W x H): 16 lon x 8 lat for ERA5 (.25 deg)
         latslice = slice(61, 53.1) # latitude is ordered N to S
-        lonslice = slice(20.1, 4) # longitude ordered E to W
+        lonslice = slice(4.1, 20) # longitude ordered W to E on this side of Greenwich
         
         ds_DK = ds.sel(latitude=latslice,  
                        longitude=lonslice) 
@@ -78,6 +78,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
 
         # Stack into (ntime, 3, 32, 64), creating the fine resolution image.
         fine = torch.stack((t, u, v), dim=1)
+        print(fine.shape)
 
         # Transforms
         # Coarsen
