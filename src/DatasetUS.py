@@ -35,7 +35,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
         """
 
         print("Opening files")
-        self.filenames = [f"samples_{year}.nc" for year in range(year_start, year_end)]
+        self.filenames = [f"samples_{year}.nc" for year in range(year_start, year_end+1)]
 
         # Open first file for saving dimension info
         filename0 = self.filenames[0]
@@ -63,7 +63,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
         for filename in self.filenames[1:]:
             path_to_file = data_dir + filename
             ds = xr.open_dataset(path_to_file, engine="netcdf4")
-            ds_US = xr.concat((ds_DK,
+            ds_DK = xr.concat((ds_DK,
                                ds.sel(latitude=latslice,
                                       longitude=lonslice)),
                               dim="time")

@@ -11,7 +11,7 @@
 ### -- set walltime limit: hh:mm --  maximum 24 hours for GPU-queues right now
 #BSUB -W 1:30
 # request X GB of system-memory
-#BSUB -R "rusage[mem=1.5GB]"
+#BSUB -R "rusage[mem=2GB]"
 ### we want to have this on a single node
 #BSUB -R "span[hosts=1]"
 ### -- set the email address --

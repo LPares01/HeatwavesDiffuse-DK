@@ -5,10 +5,11 @@ import matplotlib.pyplot as plt
 from Network import UNet
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
+import time
 
 
 def train_step(model, loss_fn, data_loader, optimiser, scaler, step, accum=4,
-               writer=None, device="cuda"):
+               writer=None, device="cuda", logging_level='tqdm'):
     """
     Function for a single training step.
     :param model: instance of the Unet class
@@ -20,12 +21,17 @@ def train_step(model, loss_fn, data_loader, optimiser, scaler, step, accum=4,
     :param accum: number of steps to accumulate gradients over
     :param writer: tensorboard writer
     :param device: device to use
+    :param logging_level: amount of information to print out. 'tqdm' or 'step', otherwise no logging at all
     :return: loss value
     """
 
+    start_time = time.time()
+
     model.train()
 
-    with tqdm(total=len(data_loader), dynamic_ncols=True) as tq:
+    disable_tqdm = (logging_level != 'tqdm')
+
+    with tqdm(total=len(data_loader), dynamic_ncols=True, disable=disable_tqdm) as tq:
         tq.set_description(f"Train :: Epoch: {step}")
 
         epoch_losses = []
@@ -39,7 +45,7 @@ def train_step(model, loss_fn, data_loader, optimiser, scaler, step, accum=4,
             condition_params = torch.stack((day, hour), dim=1)
 
             # forward unet
-            with torch.cuda.amp.autocast():
+            with torch.amp.autocast("cuda"):
                 model_out = model(image_input,
                                   class_labels=condition_params)
                 loss = loss_fn(model_out, image_output)
@@ -61,6 +67,10 @@ def train_step(model, loss_fn, data_loader, optimiser, scaler, step, accum=4,
 
         mean_loss = sum(epoch_losses) / len(epoch_losses)
         tq.set_postfix_str(s=f"Loss: {mean_loss:.4f}")
+
+    if logging_level == 'step':
+        step_time = time.time() - start_time
+        print(f"Training step {step} finished after {step_time:.2f}. Loss: {mean_loss:.4f}")
 
     return mean_loss
 
@@ -94,6 +104,35 @@ def sample_model(model, dataloader, device="cuda"):
     pred_error = torch.mean(torch.abs(fine - predicted))
 
     return (fig, ax), (base_error.item(), pred_error.item())
+
+# Added to enable saving the model based on minimal validation loss instead of training loss -> avoids overfitting
+@torch.no_grad()
+def evaluate(model, loss_fn, dataloader, device="cuda"):
+    """
+    Evaluate model on validation set.
+    :param model: instance of the Unet class
+    :param loss_fn: loss function
+    :param data_loader: validation data loader
+    :param device: device to use
+    :return: mean validation loss
+    """
+    model.eval()
+    
+    val_losses = []
+    for batch in dataloader:
+        image_input = batch["inputs"].to(device)
+        image_output = batch["targets"].to(device)
+        day = batch["doy"].to(device)
+        hour = batch["hour"].to(device)
+        condition_params = torch.stack((day, hour), dim=1)
+        
+        with torch.amp.autocast("cuda"):
+            model_out = model(image_input, class_labels=condition_params)
+            loss = loss_fn(model_out, image_output)
+        
+        val_losses.append(loss.item())
+    
+    return sum(val_losses) / len(val_losses)
 
 
 def main():
