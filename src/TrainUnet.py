@@ -45,7 +45,7 @@ def train_step(model, loss_fn, data_loader, optimiser, scaler, step, accum=4,
             condition_params = torch.stack((day, hour), dim=1)
 
             # forward unet
-            with torch.amp.autocast("cuda"):
+            with torch.amp.autocast("cuda"): # type: ignore
                 model_out = model(image_input,
                                   class_labels=condition_params)
                 loss = loss_fn(model_out, image_output)
@@ -70,7 +70,7 @@ def train_step(model, loss_fn, data_loader, optimiser, scaler, step, accum=4,
 
     if logging_level == 'step':
         step_time = time.time() - start_time
-        print(f"Training step {step} finished after {step_time:.2f}. Loss: {mean_loss:.4f}")
+        print(f"Training step {step} finished after {step_time:.2f} seconds. Loss: {mean_loss:.4f}")
 
     return mean_loss
 
@@ -126,7 +126,7 @@ def evaluate(model, loss_fn, dataloader, device="cuda"):
         hour = batch["hour"].to(device)
         condition_params = torch.stack((day, hour), dim=1)
         
-        with torch.amp.autocast("cuda"):
+        with torch.amp.autocast("cuda"): # type: ignore
             model_out = model(image_input, class_labels=condition_params)
             loss = loss_fn(model_out, image_output)
         

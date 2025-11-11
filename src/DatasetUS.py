@@ -13,12 +13,12 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
     """
 
     def __init__(self, data_dir,
-                 in_shape=(2, 4), out_shape=(32, 64),
+                 in_shape=(4, 8), out_shape=(32, 64),
                  year_start=1950, year_end=2001,
-                 normalize_rawdata_mean=torch.Tensor([2.8504e+02,  4.4536e-01, -1.1892e-01]),
-                 normalize_rawdata_std=torch.Tensor([12.7438,  3.4649,  3.742]),
-                 normalize_residual_mean=torch.Tensor([-9.4627e-05, -1.3833e-03, -1.5548e-03]),
-                 normalize_residual_std=torch.Tensor([1.6042, 1.0221, 1.0384]),
+                 normalize_rawdata_mean=torch.Tensor([2.8504e+02]),
+                 normalize_rawdata_std=torch.Tensor([12.7438]),
+                 normalize_residual_mean=torch.Tensor([-9.4627e-05]),
+                 normalize_residual_std=torch.Tensor([1.6042]),
                  constant_variables=["lsm", "z"],
                  constant_variables_filename="ERA5_const_sfc_variables.nc"
                  ):
@@ -45,7 +45,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
         # Dimensions: lon, lat (global domain)
         self.lon_glob = ds.longitude
         self.lat_glob = ds.latitude
-        self.varnames = ["temp", "u-comp wind", "v-comp wind"]
+        self.varnames = ["temp"]
         self.n_var = len(self.varnames)
 
         # Select domain with size 64 x 32 (W x H): 16 lon x 8 lat for ERA5 (.25 deg)
@@ -73,11 +73,10 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
 
         # Convert xarray dataarrays into torch Tensor (loads into memory)
         t = torch.from_numpy(ds_DK.VAR_2T.to_numpy()).float()
-        u = torch.from_numpy(ds_DK.VAR_10U.to_numpy()).float()
-        v = torch.from_numpy(ds_DK.VAR_10V.to_numpy()).float()
 
-        # Stack into (ntime, 3, 32, 64), creating the fine resolution image.
-        fine = torch.stack((t, u, v), dim=1)
+        # Stack into (ntime, 1, 128, 256), creating the fine resolution image.
+        # fine = torch.stack((t, u, v), dim=1)
+        fine = t.unsqueeze(1)
         print(fine.shape)
 
         # Transforms
@@ -101,6 +100,8 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
         # Normalize : use raw data means for coarse image
         normalize_rawdata_transform = torchvision.transforms.Normalize(normalize_rawdata_mean, normalize_rawdata_std)
         coarse_norm = normalize_rawdata_transform(coarse)
+        print(f"coarse shape: {coarse.shape}")
+        print(f"coarse shape: {coarse_norm.shape}")
 
         # use residual means for the difference between them
         normalize_residual_transform = torchvision.transforms.Normalize(normalize_residual_mean, normalize_residual_std)
@@ -115,7 +116,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
         self.targets = residual_norm     # targets  = normalized residual
         self.inputs = coarse_norm        # inputs   = normalized coarse
 
-        # Define limits for plotting (plus/minus 2 sigma
+        # Define limits for plotting (plus/minus 2 sigma)
         self.vmin = normalize_rawdata_mean - 2 * normalize_rawdata_std
         self.vmax = normalize_rawdata_mean + 2 * normalize_rawdata_std
 
@@ -210,7 +211,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
                        vmin=vmin, vmax=vmax, shading='nearest')
 
     def plot_all_channels(self, X, Y):
-        """Plots T, u, V for single image (no batch dimension)"""
+        """Plots T for single image (no batch dimension)"""
         fig, axs = plt.subplots(self.n_var, 2, figsize=(8, 2 * self.n_var),
                                 subplot_kw={'projection': ccrs.PlateCarree()})
         for i in range(self.n_var):
@@ -223,7 +224,7 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
         return fig, axs
 
     def plot_batch(self, coarse_image, fine_image, fine_image_pred, N=3):
-        """Plots u,v,T for N samples out of batch, separate
+        """Plots T for N samples out of batch, separate
         column for coarse, predicted fine and truth fine"""
         fig, axs = plt.subplots(self.n_var * N, 3, figsize=(8, N * 5),
                                 subplot_kw={'projection': ccrs.PlateCarree()})
@@ -232,12 +233,12 @@ class UpscaleDatasetDK(torch.utils.data.Dataset):
             # Plot batch
             for i in range(self.n_var):
                 # Plot channel
-                self.plot_fine(coarse_image[j, i], axs[(j * N) + i, 0],
-                               vmin=self.vmin[i], vmax=self.vmax[i])
-                self.plot_fine(fine_image_pred[j, i], axs[(j * N) + i, 1],
-                               vmin=self.vmin[i], vmax=self.vmax[i])
-                self.plot_fine(fine_image[j, i], axs[(j * N) + i, 2],
-                               vmin=self.vmin[i], vmax=self.vmax[i])
+                self.plot_fine(coarse_image[j, i], axs[(j * self.n_var) + i, 0],
+                               vmin=self.vmin[i], vmax=self.vmax[i]) # type: ignore
+                self.plot_fine(fine_image_pred[j, i], axs[(j * self.n_var) + i, 1],
+                               vmin=self.vmin[i], vmax=self.vmax[i]) # type: ignore
+                self.plot_fine(fine_image[j, i], axs[(j * self.n_var) + i, 2],
+                               vmin=self.vmin[i], vmax=self.vmax[i]) # type: ignore
 
         plt.tight_layout()
         return fig, axs
@@ -468,11 +469,11 @@ class UpscaleDataset(torch.utils.data.Dataset):
             for i in range(self.n_var):
                 # Plot channel
                 self.plot_fine(coarse_image[j, i], axs[(j * N) + i, 0],
-                               vmin=self.vmin[i], vmax=self.vmax[i])
+                               vmin=self.vmin[i], vmax=self.vmax[i]) # type: ignore
                 self.plot_fine(fine_image_pred[j, i], axs[(j * N) + i, 1],
-                               vmin=self.vmin[i], vmax=self.vmax[i])
+                               vmin=self.vmin[i], vmax=self.vmax[i]) # type: ignore
                 self.plot_fine(fine_image[j, i], axs[(j * N) + i, 2],
-                               vmin=self.vmin[i], vmax=self.vmax[i])
+                               vmin=self.vmin[i], vmax=self.vmax[i]) # type: ignore
 
         plt.tight_layout()
         return fig, axs

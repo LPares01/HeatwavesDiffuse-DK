@@ -9,5 +9,6 @@ runs*
 # Data
 data/samples_*.nc
 data/e5.*.nc
+data/cerra_t2m_198601_customgrid.nc4c
 
 .lsf_jobs/

@@ -33,7 +33,7 @@ valid_year_end = 1956
 
 # %%
 ## Select hyperparameters of training
-batch_size = 32
+batch_size = 64
 learning_rate = 1e-4
 accum = 2
 
@@ -45,7 +45,7 @@ device =  'cuda' if torch.cuda.is_available() else 'cpu'
 
 # define the ml model
 # unet_model = UNet((256, 128), 5, 3, label_dim=2, use_diffuse=False)
-unet_model = UNet((64, 32), 5, 3, label_dim=2, use_diffuse=False)
+unet_model = UNet((64, 32), 3, 1, label_dim=2, use_diffuse=False)
 unet_model.to(device)
 
 # define the datasets
@@ -71,15 +71,18 @@ dataloader_test = torch.utils.data.DataLoader(
 print(len(dataloader_train), len(dataloader_test))
 
 # %%
-scaler = torch.amp.GradScaler("cuda")
+scaler = torch.amp.GradScaler("cuda") # type: ignore
 
 # define the optimiser
 optimiser = torch.optim.AdamW(unet_model.parameters(), lr=learning_rate)
 
-# Define the tensorboard writer
+run_nbr = '06'
+run_path = os.path.join(os.path.dirname(__file__), f"./runs_unet_DK/run_{run_nbr}")
+# os.mkdir(run_path)
 
+# Define the tensorboard writer
 # writer = SummaryWriter("./runs_unet")
-writer = SummaryWriter(os.path.join(os.path.dirname(__file__), "./runs_unet_DK"))
+writer = SummaryWriter(run_path)
 
 loss_fn = torch.nn.MSELoss()
 
@@ -91,7 +94,7 @@ losses_val = []
 # Start the training loop. The plots generated will show the coarse res, the predicted, and the truth for a few samples and for different variables. At the start of training the first two columns (coarse res and predicted) look similar. Towards the end of the training, the last two columns (predicted and truth) should look similar. 
 
 # %%
-run_nbr = '04'
+
 for step in range(num_epochs):
     epoch_loss = train_step(
         unet_model, loss_fn, dataloader_train, optimiser,
@@ -104,10 +107,10 @@ for step in range(num_epochs):
     writer.add_scalar("Loss/val", val_loss, step)
 
     # every 5 epoch: compute MAE and visualize feature, prediction and label on one validation batch 
-    if (step + 0) % 5 == 0:
+    if (step + 1) % 10 == 0:
         (fig, ax), (base_error, pred_error) = sample_model(
             unet_model, dataloader_test)
-        fig.savefig(os.path.join(os.path.dirname(__file__), f"runs_unet_DK/run_{run_nbr}/epoch_{step}.png"))
+        fig.savefig(run_path + f"/epoch_{step}.png")
         plt.close(fig)
 
         writer.add_scalar("Error/base", base_error, step)
@@ -115,8 +118,11 @@ for step in range(num_epochs):
 
     # save the model
     if losses_val[-1] == min(losses_val):
-        torch.save(unet_model.state_dict(), os.path.join(os.path.dirname(__file__), f"Models_unet_DK/run_{run_nbr}.pt"))
+        torch.save(unet_model.state_dict(), f"{run_path}/run_{run_nbr}.pt")
         print(f"### New best model saved at epoch {step} with val_loss: {val_loss:.4f}")
+
+writer.close()
+print("Exited successfully!")
 
 
 
