@@ -1,0 +1,8 @@
+{"time":"2025-12-17T11:19:30.558165189+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2025-12-17T11:19:31.13997496+01:00","level":"INFO","msg":"stream: created new stream","id":"d1waksyl"}
+{"time":"2025-12-17T11:19:31.1402472+01:00","level":"INFO","msg":"handler: started","stream_id":"d1waksyl"}
+{"time":"2025-12-17T11:19:31.292398311+01:00","level":"INFO","msg":"stream: started","id":"d1waksyl"}
+{"time":"2025-12-17T11:19:31.292711696+01:00","level":"INFO","msg":"writer: started","stream_id":"d1waksyl"}
+{"time":"2025-12-17T11:19:31.292919031+01:00","level":"INFO","msg":"sender: started","stream_id":"d1waksyl"}
+{"time":"2025-12-17T11:19:32.501778737+01:00","level":"ERROR","msg":"HTTP error","status":403,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-12-17T11:19:32.501992515+01:00","level":"ERROR","msg":"runupserter: failed to init run","error":"returned error 403: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"permission denied\",\"path\":[\"upsertBucket\"],\"extensions\":{\"code\":\"PERMISSION_ERROR\"}}]}"}

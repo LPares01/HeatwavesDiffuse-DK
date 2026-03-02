@@ -1,0 +1,6 @@
+{"time":"2026-02-16T10:02:14.351061236+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2026-02-16T10:02:14.660987972+01:00","level":"INFO","msg":"stream: created new stream","id":"krni8gam"}
+{"time":"2026-02-16T10:02:14.661080839+01:00","level":"INFO","msg":"handler: started","stream_id":"krni8gam"}
+{"time":"2026-02-16T10:02:14.668966667+01:00","level":"INFO","msg":"stream: started","id":"krni8gam"}
+{"time":"2026-02-16T10:02:14.668984975+01:00","level":"INFO","msg":"sender: started","stream_id":"krni8gam"}
+{"time":"2026-02-16T10:02:14.668986207+01:00","level":"INFO","msg":"writer: started","stream_id":"krni8gam"}

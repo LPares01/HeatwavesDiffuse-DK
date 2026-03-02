@@ -1,0 +1,15 @@
+{"time":"2026-02-11T14:50:37.7911335+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2026-02-11T14:50:38.142845623+01:00","level":"INFO","msg":"stream: created new stream","id":"nxtw9zy0"}
+{"time":"2026-02-11T14:50:38.143541008+01:00","level":"INFO","msg":"handler: started","stream_id":"nxtw9zy0"}
+{"time":"2026-02-11T14:50:38.146358968+01:00","level":"INFO","msg":"stream: started","id":"nxtw9zy0"}
+{"time":"2026-02-11T14:50:38.146414444+01:00","level":"INFO","msg":"writer: started","stream_id":"nxtw9zy0"}
+{"time":"2026-02-11T14:50:38.14646035+01:00","level":"INFO","msg":"sender: started","stream_id":"nxtw9zy0"}
+{"time":"2026-02-11T23:00:09.38252351+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/nxtw9zy0/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-11T23:16:53.866941376+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/nxtw9zy0/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-12T12:16:19.698302313+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/nxtw9zy0/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}
+{"time":"2026-02-12T13:15:11.699333763+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-12T13:15:12.037653319+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-02-12T13:15:12.049274572+01:00","level":"INFO","msg":"stream: closing","id":"nxtw9zy0"}
+{"time":"2026-02-12T13:15:12.049295208+01:00","level":"INFO","msg":"handler: closed","stream_id":"nxtw9zy0"}
+{"time":"2026-02-12T13:15:12.050121486+01:00","level":"INFO","msg":"sender: closed","stream_id":"nxtw9zy0"}
+{"time":"2026-02-12T13:15:12.050152486+01:00","level":"INFO","msg":"stream: closed","id":"nxtw9zy0"}

@@ -1,0 +1,68 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            lxnlecrslui392trfzekyu7ux4s6bdv8:
+                codePath: examples/train_minimal.py
+                codePathLocal: examples/train_minimal.py
+                cpu_count: 24
+                cpu_count_logical: 24
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "76817485824"
+                        used: "7521792000"
+                email: lucpares01@gmail.com
+                executable: /zhome/98/d/202490/Documents/Thesis/clim-dif/bin/python
+                git:
+                    commit: 298377bb901db99d84547331e8f1df16b97955fb
+                    remote: git@github.com:LPares01/HeatwavesDiffuse-DK
+                gpu: Tesla V100-PCIE-32GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Volta
+                      cudaCores: 5120
+                      memoryTotal: "34359738368"
+                      name: Tesla V100-PCIE-32GB
+                      uuid: GPU-d20495dc-848a-af2a-51ea-c1f9d5fe687a
+                host: n-62-20-14
+                memory:
+                    total: "404874928128"
+                os: Linux-6.1.159-1.el9.elrepo.x86_64-x86_64-with-glibc2.34
+                program: /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/examples/train_minimal.py
+                python: CPython 3.9.25
+                root: /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse
+                startedAt: "2026-01-08T13:34:51.867720Z"
+                writerId: lxnlecrslui392trfzekyu7ux4s6bdv8
+        m: []
+        python_version: 3.9.25
+        t:
+            "1":
+                - 1
+                - 2
+                - 3
+                - 41
+            "2":
+                - 1
+                - 2
+                - 3
+                - 41
+            "3":
+                - 2
+                - 16
+            "4": 3.9.25
+            "5": 0.23.1
+            "12": 0.23.1
+            "13": linux-x86_64
+accum:
+    value: 16
+architecture:
+    value: U-Net
+batch_size:
+    value: 8
+dataset:
+    value: minimal
+epochs:
+    value: 100
+learning_rate:
+    value: 0.0001

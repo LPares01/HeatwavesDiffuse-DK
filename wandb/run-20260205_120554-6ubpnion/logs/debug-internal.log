@@ -1,0 +1,6 @@
+{"time":"2026-02-05T12:05:55.033713497+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2026-02-05T12:05:55.346982526+01:00","level":"INFO","msg":"stream: created new stream","id":"6ubpnion"}
+{"time":"2026-02-05T12:05:55.347102444+01:00","level":"INFO","msg":"handler: started","stream_id":"6ubpnion"}
+{"time":"2026-02-05T12:05:55.353681674+01:00","level":"INFO","msg":"stream: started","id":"6ubpnion"}
+{"time":"2026-02-05T12:05:55.353695299+01:00","level":"INFO","msg":"sender: started","stream_id":"6ubpnion"}
+{"time":"2026-02-05T12:05:55.353695745+01:00","level":"INFO","msg":"writer: started","stream_id":"6ubpnion"}

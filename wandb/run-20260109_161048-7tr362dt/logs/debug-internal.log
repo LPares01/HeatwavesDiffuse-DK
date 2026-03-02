@@ -1,0 +1,7 @@
+{"time":"2026-01-09T16:10:51.26812047+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2026-01-09T16:10:51.994514759+01:00","level":"INFO","msg":"stream: created new stream","id":"7tr362dt"}
+{"time":"2026-01-09T16:10:51.994569081+01:00","level":"INFO","msg":"handler: started","stream_id":"7tr362dt"}
+{"time":"2026-01-09T16:10:51.997145175+01:00","level":"INFO","msg":"stream: started","id":"7tr362dt"}
+{"time":"2026-01-09T16:10:51.997159038+01:00","level":"INFO","msg":"writer: started","stream_id":"7tr362dt"}
+{"time":"2026-01-09T16:10:51.997160853+01:00","level":"INFO","msg":"sender: started","stream_id":"7tr362dt"}
+{"time":"2026-01-09T22:20:08.226137887+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/7tr362dt/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}

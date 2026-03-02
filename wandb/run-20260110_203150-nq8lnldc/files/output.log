@@ -1,0 +1,80 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([48, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([48, 1, 256, 256])
+tensor([268.6730]) tensor([298.1122])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([12, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([12, 1, 256, 256])
+tensor([268.6730]) tensor([298.1122])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Traceback (most recent call last):
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 334, in <module>
+    main()
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 310, in main
+    epoch_loss = train_step(
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 70, in train_step
+    loss = loss_fn(net=model, images=image_output,
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 25, in __call__
+    D_yn = net(y + n, sigma, conditional_img, labels,
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/Network.py", line 381, in forward
+    F_x = self.model((c_in * in_img).to(dtype),
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/Network.py", line 324, in forward
+    x = block(x, emb) if isinstance(block, UNetBlock) else block(x)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/Network.py", line 87, in forward
+    x = torch.nn.functional.conv2d(x, w, padding=w_pad)
+RuntimeError: Given groups=1, weight of size [128, 3, 3, 3], expected input[8, 4, 256, 256] to have 3 channels, but got 4 channels instead
+Traceback (most recent call last):
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 334, in <module>
+    main()
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 310, in main
+    epoch_loss = train_step(
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 70, in train_step
+    loss = loss_fn(net=model, images=image_output,
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py", line 25, in __call__
+    D_yn = net(y + n, sigma, conditional_img, labels,
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/Network.py", line 381, in forward
+    F_x = self.model((c_in * in_img).to(dtype),
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/Network.py", line 324, in forward
+    x = block(x, emb) if isinstance(block, UNetBlock) else block(x)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/Network.py", line 87, in forward
+    x = torch.nn.functional.conv2d(x, w, padding=w_pad)
+RuntimeError: Given groups=1, weight of size [128, 3, 3, 3], expected input[8, 4, 256, 256] to have 3 channels, but got 4 channels instead

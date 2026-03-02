@@ -1,0 +1,29 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([8766, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([8766, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([2191, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([2191, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Sea-Masking+WMSE not yet implemented.
+Traceback (most recent call last):
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 346, in <module>
+    main()
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 294, in main
+    loss_fn.to(device)
+UnboundLocalError: local variable 'loss_fn' referenced before assignment
+Traceback (most recent call last):
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 346, in <module>
+    main()
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 294, in main
+    loss_fn.to(device)
+UnboundLocalError: local variable 'loss_fn' referenced before assignment

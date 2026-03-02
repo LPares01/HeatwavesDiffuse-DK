@@ -1,0 +1,30 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([48, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([48, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([12, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([12, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+/home/lucpar/.miniforge3/envs/ClimateDiffuse/lib/python3.10/site-packages/torch/amp/grad_scaler.py:136: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+Loading model from checkpoint...
+Previously trained model weights state_dict loaded...
+Previously trained optimizer state_dict loaded...
+Trained model loss function loaded...
+Previously trained for 0 number of epochs...
+Train for 1 more epochs...
+/home/lucpar/.miniforge3/envs/ClimateDiffuse/lib/python3.10/site-packages/torch/utils/data/dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+/home/lucpar/.miniforge3/envs/ClimateDiffuse/lib/python3.10/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+Training step 0 finished after 835.04 seconds. Loss: 1.1410
+### New best model saved at epoch 0 with val_loss: 1.0795

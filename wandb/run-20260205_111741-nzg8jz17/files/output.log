@@ -1,0 +1,23 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([48, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([48, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Failed to enable GUI event loop integration for 'qt'
+Traceback (most recent call last):
+  File "/home/lucpar/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydev_ipython/matplotlibtools.py", line 49, in do_enable_gui
+    enable_gui(guiname)
+  File "/home/lucpar/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydev_ipython/inputhook.py", line 567, in enable_gui
+    return gui_hook(app)
+  File "/home/lucpar/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydev_ipython/inputhook.py", line 187, in enable_qt
+    self.enable_qt4(app)
+  File "/home/lucpar/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydev_ipython/inputhook.py", line 213, in enable_qt4
+    app, inputhook_qt4 = create_inputhook_qt4(self, app)
+  File "/home/lucpar/.vscode/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydev_ipython/inputhookqt4.py", line 87, in create_inputhook_qt4
+    app = QtGui.QApplication([" "])
+AttributeError: module 'PySide6.QtGui' has no attribute 'QApplication'. Did you mean: 'QGuiApplication'?
+Backend qtagg is interactive backend. Turning interactive mode on.
+/home/lucpar/.miniforge3/envs/ClimateDiffuse/lib/python3.10/site-packages/torch/masked/maskedtensor/creation.py:20: UserWarning: The PyTorch API of MaskedTensors is in prototype stage and will change in the near future. Please open a Github issue for features requests and see our documentation on the torch.masked module for further information about the project.
+  return MaskedTensor(data, mask, requires_grad)

@@ -1,0 +1,122 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([8766, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([8766, 1, 256, 256])
+tensor([268.6730]) tensor([298.1122])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([2191, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([2191, 1, 256, 256])
+tensor([268.6730]) tensor([298.1122])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Training step 0 finished after 920.38 seconds. Loss: 0.9223
+### New best model saved at epoch 0 with val_loss: 0.7782
+Training step 1 finished after 926.05 seconds. Loss: 0.7997
+### New best model saved at epoch 1 with val_loss: 0.6753
+Training step 2 finished after 917.84 seconds. Loss: 0.6787
+### New best model saved at epoch 2 with val_loss: 0.6138
+Training step 3 finished after 916.84 seconds. Loss: 0.5951
+### New best model saved at epoch 3 with val_loss: 0.5183
+Training step 4 finished after 909.63 seconds. Loss: 0.5344
+### New best model saved at epoch 4 with val_loss: 0.4846
+Training step 5 finished after 914.85 seconds. Loss: 0.5012
+### New best model saved at epoch 5 with val_loss: 0.4633
+Training step 6 finished after 911.04 seconds. Loss: 0.4786
+### New best model saved at epoch 6 with val_loss: 0.4470
+Training step 7 finished after 892.76 seconds. Loss: 0.4600
+### New best model saved at epoch 7 with val_loss: 0.4323
+Training step 8 finished after 901.44 seconds. Loss: 0.4415
+Training step 9 finished after 899.13 seconds. Loss: 0.4287
+### New best model saved at epoch 9 with val_loss: 0.4134
+Training step 10 finished after 912.32 seconds. Loss: 0.4137
+Training step 11 finished after 899.99 seconds. Loss: 0.4000
+Training step 12 finished after 907.00 seconds. Loss: 0.3867
+### New best model saved at epoch 12 with val_loss: 0.4123
+Training step 13 finished after 903.43 seconds. Loss: 0.3730
+### New best model saved at epoch 13 with val_loss: 0.4027
+Training step 14 finished after 903.19 seconds. Loss: 0.3592
+Training step 15 finished after 909.11 seconds. Loss: 0.3450
+Training step 16 finished after 919.03 seconds. Loss: 0.3299
+Training step 17 finished after 922.45 seconds. Loss: 0.3164
+Training step 18 finished after 913.58 seconds. Loss: 0.3022
+Training step 19 finished after 914.43 seconds. Loss: 0.2853
+Training step 20 finished after 908.65 seconds. Loss: 0.2716
+Training step 21 finished after 902.63 seconds. Loss: 0.2596
+Training step 22 finished after 904.65 seconds. Loss: 0.2493
+Training step 23 finished after 906.49 seconds. Loss: 0.2371
+Training step 24 finished after 909.71 seconds. Loss: 0.2254
+Training step 25 finished after 906.70 seconds. Loss: 0.2147
+Training step 26 finished after 914.51 seconds. Loss: 0.2087
+Training step 27 finished after 901.99 seconds. Loss: 0.1994
+Training step 28 finished after 907.64 seconds. Loss: 0.1901
+Training step 29 finished after 903.90 seconds. Loss: 0.1831
+Training step 30 finished after 912.98 seconds. Loss: 0.1769
+Training step 31 finished after 906.60 seconds. Loss: 0.1708
+Training step 32 finished after 899.59 seconds. Loss: 0.1653
+Training step 33 finished after 908.84 seconds. Loss: 0.1617
+Training step 34 finished after 905.29 seconds. Loss: 0.1569
+Training step 35 finished after 898.60 seconds. Loss: 0.1514
+Training step 36 finished after 893.65 seconds. Loss: 0.1465
+Training step 37 finished after 909.30 seconds. Loss: 0.1442
+Training step 38 finished after 899.87 seconds. Loss: 0.1407
+Training step 39 finished after 911.01 seconds. Loss: 0.1365
+Training step 40 finished after 902.75 seconds. Loss: 0.1339
+Training step 41 finished after 906.91 seconds. Loss: 0.1325
+Training step 42 finished after 904.70 seconds. Loss: 0.1287
+Training step 43 finished after 901.13 seconds. Loss: 0.1264
+Training step 44 finished after 910.04 seconds. Loss: 0.1245
+Training step 45 finished after 897.67 seconds. Loss: 0.1211
+Training step 46 finished after 895.22 seconds. Loss: 0.1185
+Training step 47 finished after 896.34 seconds. Loss: 0.1175
+Training step 48 finished after 894.43 seconds. Loss: 0.1154
+Training step 49 finished after 893.96 seconds. Loss: 0.1131
+Training step 50 finished after 896.69 seconds. Loss: 0.1121
+Training step 51 finished after 892.59 seconds. Loss: 0.1099
+Training step 52 finished after 895.38 seconds. Loss: 0.1088
+Training step 53 finished after 891.61 seconds. Loss: 0.1071
+Training step 54 finished after 895.08 seconds. Loss: 0.1061
+Training step 55 finished after 894.57 seconds. Loss: 0.1039
+Training step 56 finished after 895.09 seconds. Loss: 0.1028
+Training step 57 finished after 893.51 seconds. Loss: 0.1022
+Training step 58 finished after 893.18 seconds. Loss: 0.1015
+Training step 59 finished after 891.53 seconds. Loss: 0.0989
+Training step 60 finished after 892.35 seconds. Loss: 0.0975
+Training step 61 finished after 892.49 seconds. Loss: 0.0971
+Training step 62 finished after 892.14 seconds. Loss: 0.0966
+Training step 63 finished after 892.70 seconds. Loss: 0.0945
+Training step 64 finished after 895.95 seconds. Loss: 0.0933
+Training step 65 finished after 892.21 seconds. Loss: 0.0922
+Training step 66 finished after 891.74 seconds. Loss: 0.0919
+Training step 67 finished after 894.69 seconds. Loss: 0.0916
+Training step 68 finished after 892.36 seconds. Loss: 0.0904
+Training step 69 finished after 891.84 seconds. Loss: 0.0916
+Training step 70 finished after 891.50 seconds. Loss: 0.0904
+Training step 71 finished after 898.08 seconds. Loss: 0.0885
+Training step 72 finished after 892.10 seconds. Loss: 0.0881
+Training step 73 finished after 891.99 seconds. Loss: 0.0868
+Training step 74 finished after 892.52 seconds. Loss: 0.0855
+Training step 75 finished after 892.72 seconds. Loss: 0.0862
+Training step 76 finished after 901.97 seconds. Loss: 0.0839
+Training step 77 finished after 893.59 seconds. Loss: 0.0844
+Training step 78 finished after 892.05 seconds. Loss: 0.0834
+Training step 79 finished after 895.14 seconds. Loss: 0.0821
+Training step 80 finished after 894.47 seconds. Loss: 0.0834
+Training step 81 finished after 890.34 seconds. Loss: 0.0818
+Training step 82 finished after 894.90 seconds. Loss: 0.0810
+Training step 83 finished after 893.70 seconds. Loss: 0.0806
+Training step 84 finished after 896.20 seconds. Loss: 0.0800
+Training step 85 finished after 891.16 seconds. Loss: 0.0789
+Training step 86 finished after 892.28 seconds. Loss: 0.0786

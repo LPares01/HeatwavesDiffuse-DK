@@ -1,0 +1,21 @@
+2026-02-05 10:19:54,632 INFO    MainThread:1387707 [wandb_setup.py:_flush():80] Current SDK version is 0.23.1
+2026-02-05 10:19:54,632 INFO    MainThread:1387707 [wandb_setup.py:_flush():80] Configure stats pid to 1387707
+2026-02-05 10:19:54,632 INFO    MainThread:1387707 [wandb_setup.py:_flush():80] Loading settings from /home/lucpar/.config/wandb/settings
+2026-02-05 10:19:54,632 INFO    MainThread:1387707 [wandb_setup.py:_flush():80] Loading settings from /dmidata/users/lucpar/MASTER_THESIS/projects/ClimateDiffuse_sync/wandb/settings
+2026-02-05 10:19:54,632 INFO    MainThread:1387707 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2026-02-05 10:19:54,633 INFO    MainThread:1387707 [wandb_init.py:setup_run_log_directory():714] Logging user logs to /dmidata/users/lucpar/MASTER_THESIS/projects/ClimateDiffuse_sync/wandb/run-20260205_101954-67cz547i/logs/debug.log
+2026-02-05 10:19:54,635 INFO    MainThread:1387707 [wandb_init.py:setup_run_log_directory():715] Logging internal logs to /dmidata/users/lucpar/MASTER_THESIS/projects/ClimateDiffuse_sync/wandb/run-20260205_101954-67cz547i/logs/debug-internal.log
+2026-02-05 10:19:54,636 INFO    MainThread:1387707 [wandb_init.py:init():841] calling init triggers
+2026-02-05 10:19:54,637 INFO    MainThread:1387707 [wandb_init.py:init():846] wandb.init called with sweep_config: {}
+config: {'architecture': 'unet', 'dataset': 'dummy', 'epochs': 1, 'learning_rate': 0.0001, 'batch_size': 2, 'accum': 4, 'loss_fn': 'MSE', 'percentile': 95, 'sea_mask': True, 'save_checkpoint': True, 'load_checkpoint': False, '_wandb': {}}
+2026-02-05 10:19:54,639 INFO    MainThread:1387707 [wandb_init.py:init():889] starting backend
+2026-02-05 10:19:54,952 INFO    MainThread:1387707 [wandb_init.py:init():892] sending inform_init request
+2026-02-05 10:19:54,957 INFO    MainThread:1387707 [wandb_init.py:init():900] backend started and connected
+2026-02-05 10:19:54,992 INFO    MainThread:1387707 [wandb_init.py:init():970] updated telemetry
+2026-02-05 10:19:55,022 INFO    MainThread:1387707 [wandb_init.py:init():994] communicating run to backend with 90.0 second timeout
+2026-02-05 10:19:55,644 INFO    MainThread:1387707 [wandb_init.py:init():1041] starting run threads in backend
+2026-02-05 10:19:55,874 INFO    MainThread:1387707 [wandb_run.py:_console_start():2521] atexit reg
+2026-02-05 10:19:55,875 INFO    MainThread:1387707 [wandb_run.py:_redirect():2369] redirect: wrap_raw
+2026-02-05 10:19:55,875 INFO    MainThread:1387707 [wandb_run.py:_redirect():2438] Wrapping output streams.
+2026-02-05 10:19:55,875 INFO    MainThread:1387707 [wandb_run.py:_redirect():2461] Redirects installed.
+2026-02-05 10:19:55,879 INFO    MainThread:1387707 [wandb_init.py:init():1081] run started, returning control to user process

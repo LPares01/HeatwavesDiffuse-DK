@@ -1,0 +1,37 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([48, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([48, 1, 256, 256])
+tensor([268.6730]) tensor([298.1122])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([12, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([12, 1, 256, 256])
+tensor([268.6730]) tensor([298.1122])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Training step 0 finished after 12.19 seconds. Loss: 1.1534
+### New best model saved at epoch 0 with val_loss: 1.0491
+Training step 1 finished after 4.77 seconds. Loss: 1.1534
+### New best model saved at epoch 1 with val_loss: 1.0368
+Training step 2 finished after 4.80 seconds. Loss: 1.1534
+Training step 3 finished after 4.80 seconds. Loss: 1.1534
+### New best model saved at epoch 3 with val_loss: 0.9596
+Training step 4 finished after 4.82 seconds. Loss: 1.1534
+Training step 5 finished after 4.80 seconds. Loss: 1.1534
+Training step 6 finished after 4.80 seconds. Loss: 1.1534
+Training step 7 finished after 4.81 seconds. Loss: 1.1534
+Training step 8 finished after 4.82 seconds. Loss: 1.1534
+Training step 9 finished after 4.81 seconds. Loss: 1.1534

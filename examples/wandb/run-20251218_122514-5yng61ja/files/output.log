@@ -1,0 +1,46 @@
+Running on cuda
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([1461, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([1461, 1, 256, 256])
+torch.Size([1])
+tensor([259.5524]) tensor([310.5276])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([365, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([365, 1, 256, 256])
+torch.Size([1])
+tensor([259.5524]) tensor([310.5276])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+183 46
+Training step 0 finished after 165.41 seconds. Loss: 0.6093
+### New best model saved at epoch 0 with val_loss: 0.5578
+Training step 1 finished after 147.61 seconds. Loss: 0.5879
+### New best model saved at epoch 1 with val_loss: 0.5473
+Training step 2 finished after 147.84 seconds. Loss: 0.5770
+### New best model saved at epoch 2 with val_loss: 0.5446
+Training step 3 finished after 148.00 seconds. Loss: 0.5660
+### New best model saved at epoch 3 with val_loss: 0.5358
+Training step 4 finished after 148.01 seconds. Loss: 0.5557
+Training step 5 finished after 148.17 seconds. Loss: 0.5467
+### New best model saved at epoch 5 with val_loss: 0.5266
+Training step 6 finished after 148.22 seconds. Loss: 0.5372
+### New best model saved at epoch 6 with val_loss: 0.5136
+Training step 7 finished after 148.26 seconds. Loss: 0.5266
+### New best model saved at epoch 7 with val_loss: 0.5056
+Training step 8 finished after 148.25 seconds. Loss: 0.5185
+### New best model saved at epoch 8 with val_loss: 0.4954
+Training step 9 finished after 148.29 seconds. Loss: 0.5078

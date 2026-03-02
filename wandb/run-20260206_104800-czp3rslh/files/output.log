@@ -1,0 +1,37 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([8766, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([8766, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([2191, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([2191, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Loading model from checkpoint...
+Traceback (most recent call last):
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 343, in <module>
+    main()
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 255, in main
+    checkpoint = torch.load(f"{run_path}/run_{run_nbr}_chk.pt", weights_only=False)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/serialization.py", line 1491, in load
+    with _open_zipfile_reader(opened_file) as opened_zipfile:
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/serialization.py", line 771, in __init__
+    super().__init__(torch._C.PyTorchFileReader(name_or_buffer))
+RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory
+Traceback (most recent call last):
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 343, in <module>
+    main()
+  File "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainUnet.py", line 255, in main
+    checkpoint = torch.load(f"{run_path}/run_{run_nbr}_chk.pt", weights_only=False)
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/serialization.py", line 1491, in load
+    with _open_zipfile_reader(opened_file) as opened_zipfile:
+  File "/zhome/98/d/202490/Documents/Thesis/clim-dif/lib64/python3.9/site-packages/torch/serialization.py", line 771, in __init__
+    super().__init__(torch._C.PyTorchFileReader(name_or_buffer))
+RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory

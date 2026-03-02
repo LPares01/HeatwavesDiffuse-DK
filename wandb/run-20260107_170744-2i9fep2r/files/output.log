@@ -1,0 +1,34 @@
+Running on cpu
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([365, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([365, 1, 256, 256])
+Means: tensor(281.7107) tensor(281.5662) tensor(-0.1445)
+Stds: tensor(8.3295) tensor(8.3401) tensor(1.3134)
+tensor([-2.]) tensor([2.])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([365, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([365, 1, 256, 256])
+Means: tensor(284.1596) tensor(284.0658) tensor(-0.0938)
+Stds: tensor(6.6528) tensor(6.8393) tensor(1.2214)
+tensor([-2.]) tensor([2.])
+Opening constant variables file (e.g. land-sea mask, topography)
+Normalize orog
+orog stats -- mean: <xarray.DataArray 'orog' ()> Size: 4B
+array(125.51304, dtype=float32), std.: <xarray.DataArray 'orog' ()> Size: 4B
+array(240.18056, dtype=float32)
+Dataset initialized.
+46 46
+/home/lucpar/.miniforge3/envs/ClimateDiffuse/lib/python3.10/site-packages/torch/amp/grad_scaler.py:136: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+/home/lucpar/.miniforge3/envs/ClimateDiffuse/lib/python3.10/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(

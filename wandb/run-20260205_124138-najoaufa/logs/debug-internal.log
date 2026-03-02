@@ -1,0 +1,6 @@
+{"time":"2026-02-05T12:41:38.775499721+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2026-02-05T12:41:39.091360395+01:00","level":"INFO","msg":"stream: created new stream","id":"najoaufa"}
+{"time":"2026-02-05T12:41:39.091502395+01:00","level":"INFO","msg":"handler: started","stream_id":"najoaufa"}
+{"time":"2026-02-05T12:41:39.10636413+01:00","level":"INFO","msg":"stream: started","id":"najoaufa"}
+{"time":"2026-02-05T12:41:39.10640765+01:00","level":"INFO","msg":"sender: started","stream_id":"najoaufa"}
+{"time":"2026-02-05T12:41:39.106408789+01:00","level":"INFO","msg":"writer: started","stream_id":"najoaufa"}

@@ -1,0 +1,76 @@
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([8766, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([8766, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Opening CERRA files
+All files accessed. Creating tensors
+CERRA tensor: torch.Size([2191, 1, 256, 256])
+Opening ERA files
+ERA5 tensor: torch.Size([2191, 1, 256, 256])
+Opening constant variables file (e.g. orography, land-sea mask)
+Normalize orog
+Dataset initialized.
+Training step 0 finished after 884.14 seconds (incl. 657.40 spent
+backpropagating and 18.43 between accumulations). Loss: 0.6586
+### New best model saved at epoch 0 with val_loss: 0.5230
+Training step 1 finished after 887.67 seconds (incl. 660.98 spent
+backpropagating and 18.53 between accumulations). Loss: 0.5365
+### New best model saved at epoch 1 with val_loss: 0.4814
+Training step 2 finished after 884.40 seconds (incl. 658.31 spent
+backpropagating and 18.48 between accumulations). Loss: 0.5017
+### New best model saved at epoch 2 with val_loss: 0.4518
+Training step 3 finished after 885.18 seconds (incl. 658.95 spent
+backpropagating and 18.47 between accumulations). Loss: 0.4796
+### New best model saved at epoch 3 with val_loss: 0.4353
+Training step 4 finished after 886.49 seconds (incl. 660.02 spent
+backpropagating and 18.44 between accumulations). Loss: 0.4636
+### New best model saved at epoch 4 with val_loss: 0.4260
+Training step 5 finished after 885.05 seconds (incl. 658.80 spent
+backpropagating and 18.45 between accumulations). Loss: 0.4494
+### New best model saved at epoch 5 with val_loss: 0.4149
+Training step 6 finished after 885.56 seconds (incl. 658.83 spent
+backpropagating and 18.64 between accumulations). Loss: 0.4362
+Training step 7 finished after 888.27 seconds (incl. 661.07 spent
+backpropagating and 18.52 between accumulations). Loss: 0.4244
+Training step 8 finished after 884.61 seconds (incl. 658.12 spent
+backpropagating and 18.47 between accumulations). Loss: 0.4124
+Training step 9 finished after 885.92 seconds (incl. 659.22 spent
+backpropagating and 18.49 between accumulations). Loss: 0.4036
+Training step 10 finished after 886.35 seconds (incl. 659.83 spent
+backpropagating and 18.47 between accumulations). Loss: 0.3944
+### New best model saved at epoch 10 with val_loss: 0.4034
+Training step 11 finished after 886.74 seconds (incl. 660.27 spent
+backpropagating and 18.47 between accumulations). Loss: 0.3858
+### New best model saved at epoch 11 with val_loss: 0.3996
+Training step 12 finished after 884.94 seconds (incl. 658.45 spent
+backpropagating and 18.49 between accumulations). Loss: 0.3748
+### New best model saved at epoch 12 with val_loss: 0.3985
+Training step 13 finished after 887.28 seconds (incl. 660.52 spent
+backpropagating and 18.49 between accumulations). Loss: 0.3660
+Training step 14 finished after 885.92 seconds (incl. 659.28 spent
+backpropagating and 18.63 between accumulations). Loss: 0.3576
+Training step 15 finished after 885.35 seconds (incl. 658.63 spent
+backpropagating and 18.48 between accumulations). Loss: 0.3480
+### New best model saved at epoch 15 with val_loss: 0.3975
+Training step 16 finished after 885.86 seconds (incl. 659.07 spent
+backpropagating and 18.49 between accumulations). Loss: 0.3388
+Training step 17 finished after 888.92 seconds (incl. 661.45 spent
+backpropagating and 18.56 between accumulations). Loss: 0.3322
+Training step 18 finished after 886.89 seconds (incl. 659.87 spent
+backpropagating and 18.52 between accumulations). Loss: 0.3212
+Training step 19 finished after 885.41 seconds (incl. 658.67 spent
+backpropagating and 18.50 between accumulations). Loss: 0.3093
+Training step 20 finished after 885.89 seconds (incl. 659.08 spent
+backpropagating and 18.49 between accumulations). Loss: 0.2996
+Training step 21 finished after 887.52 seconds (incl. 660.81 spent
+backpropagating and 18.49 between accumulations). Loss: 0.2908
+Training step 22 finished after 885.95 seconds (incl. 659.46 spent
+backpropagating and 18.48 between accumulations). Loss: 0.2805
+Training step 23 finished after 887.59 seconds (incl. 660.41 spent
+backpropagating and 18.68 between accumulations). Loss: 0.2716
+Training step 24 finished after 888.04 seconds (incl. 660.73 spent
+backpropagating and 18.55 between accumulations). Loss: 0.2628

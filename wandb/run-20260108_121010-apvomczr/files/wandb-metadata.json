@@ -1,0 +1,40 @@
+{
+  "os":  "Linux-6.1.159-1.el9.elrepo.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.9.25",
+  "startedAt":  "2026-01-08T11:10:10.075237Z",
+  "program":  "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/examples/train_minimal.py",
+  "codePath":  "examples/train_minimal.py",
+  "codePathLocal":  "examples/train_minimal.py",
+  "git":  {
+    "remote":  "git@github.com:LPares01/HeatwavesDiffuse-DK",
+    "commit":  "298377bb901db99d84547331e8f1df16b97955fb"
+  },
+  "email":  "lucpares01@gmail.com",
+  "root":  "/zhome/98/d/202490/Documents/Thesis/ClimateDiffuse",
+  "host":  "n-62-20-11",
+  "executable":  "/zhome/98/d/202490/Documents/Thesis/clim-dif/bin/python",
+  "cpu_count":  32,
+  "cpu_count_logical":  32,
+  "gpu":  "Tesla V100-SXM2-32GB",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "76817485824",
+      "used":  "8039030784"
+    }
+  },
+  "memory":  {
+    "total":  "404837019648"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla V100-SXM2-32GB",
+      "memoryTotal":  "34359738368",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-2a0ef8d9-f88a-027b-39a4-5b83d1d61266"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "jjoouszurrs0u5w324j2d8c3huqnfnxd"
+}

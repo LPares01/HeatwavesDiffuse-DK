@@ -1,0 +1,8 @@
+{"time":"2026-02-05T19:03:53.332353673+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2026-02-05T19:03:53.652850632+01:00","level":"INFO","msg":"stream: created new stream","id":"sfgape8x"}
+{"time":"2026-02-05T19:03:53.652900409+01:00","level":"INFO","msg":"handler: started","stream_id":"sfgape8x"}
+{"time":"2026-02-05T19:03:53.655532745+01:00","level":"INFO","msg":"stream: started","id":"sfgape8x"}
+{"time":"2026-02-05T19:03:53.655550394+01:00","level":"INFO","msg":"sender: started","stream_id":"sfgape8x"}
+{"time":"2026-02-05T19:03:53.655549674+01:00","level":"INFO","msg":"writer: started","stream_id":"sfgape8x"}
+{"time":"2026-02-05T19:51:09.810406909+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/sfgape8x/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-05T23:27:39.305452919+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/sfgape8x/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
