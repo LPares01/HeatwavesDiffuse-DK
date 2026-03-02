@@ -1,6 +1,0 @@
-{"time":"2026-02-05T10:29:20.29264821+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
-{"time":"2026-02-05T10:29:20.592975474+01:00","level":"INFO","msg":"stream: created new stream","id":"nudoic2l"}
-{"time":"2026-02-05T10:29:20.593041185+01:00","level":"INFO","msg":"handler: started","stream_id":"nudoic2l"}
-{"time":"2026-02-05T10:29:20.598341314+01:00","level":"INFO","msg":"stream: started","id":"nudoic2l"}
-{"time":"2026-02-05T10:29:20.598364865+01:00","level":"INFO","msg":"sender: started","stream_id":"nudoic2l"}
-{"time":"2026-02-05T10:29:20.598368754+01:00","level":"INFO","msg":"writer: started","stream_id":"nudoic2l"}

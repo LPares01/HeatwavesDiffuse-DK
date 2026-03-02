@@ -1,8 +1,0 @@
-Opening CERRA files
-All files accessed. Creating tensors
-CERRA tensor: torch.Size([8766, 1, 256, 256])
-Opening ERA files
-ERA5 tensor: torch.Size([8766, 1, 256, 256])
-torch.Size([1])
-tensor([-2.]) tensor([2.])
-Opening constant variables file (e.g. land-sea mask, topography)

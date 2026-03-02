@@ -1,6 +1,0 @@
-{"time":"2026-02-16T09:28:00.089559839+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
-{"time":"2026-02-16T09:28:00.392066047+01:00","level":"INFO","msg":"stream: created new stream","id":"bd4grase"}
-{"time":"2026-02-16T09:28:00.392646943+01:00","level":"INFO","msg":"handler: started","stream_id":"bd4grase"}
-{"time":"2026-02-16T09:28:00.400490519+01:00","level":"INFO","msg":"stream: started","id":"bd4grase"}
-{"time":"2026-02-16T09:28:00.40052142+01:00","level":"INFO","msg":"writer: started","stream_id":"bd4grase"}
-{"time":"2026-02-16T09:28:00.400539405+01:00","level":"INFO","msg":"sender: started","stream_id":"bd4grase"}
