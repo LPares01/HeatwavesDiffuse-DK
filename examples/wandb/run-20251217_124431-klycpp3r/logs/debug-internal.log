@@ -1,7 +1,0 @@
-{"time":"2025-12-17T12:44:33.658190483+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
-{"time":"2025-12-17T12:44:34.233171818+01:00","level":"INFO","msg":"stream: created new stream","id":"klycpp3r"}
-{"time":"2025-12-17T12:44:34.23337525+01:00","level":"INFO","msg":"handler: started","stream_id":"klycpp3r"}
-{"time":"2025-12-17T12:44:34.41810538+01:00","level":"INFO","msg":"stream: started","id":"klycpp3r"}
-{"time":"2025-12-17T12:44:34.418278187+01:00","level":"INFO","msg":"writer: started","stream_id":"klycpp3r"}
-{"time":"2025-12-17T12:44:34.418312309+01:00","level":"INFO","msg":"sender: started","stream_id":"klycpp3r"}
-{"time":"2025-12-18T11:12:00.609084321+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/lucp-masters-thesis/climate-diffuse/klycpp3r/file_stream\": dial tcp: lookup api.wandb.ai on 172.25.4.4:53: write udp 10.100.241.224:50632->172.25.4.4:53: write: operation not permitted"}
