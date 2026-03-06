@@ -4,7 +4,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
 # Load CERRA data
-ds = xr.open_dataset('/dmidata/users/lucpar/MASTER_THESIS/report/figures/cerra_example.nc4c', engine='netcdf4')
+ds = xr.open_dataset('/a/cerra/nc/file', engine='netcdf4')
 
 # Select a specific time step
 t2m = ds['2t'].isel(time=0, height=0)
