@@ -1,15 +1,14 @@
-Models*
-results*
-runs*
-*.pyc
-*.DS_Store
-*.ipynb_checkpoints*
-
 # Data
-data/samples_*.nc
-data/e5.*.nc
 data/CERRA-ERA5/*_max
 data/CERRA-ERA5/*samples*
 
-# HPC logs
+# Runs
+src/runs*
+
+# Run logs
 .lsf_jobs/
+wandb/
+
+# Meta
+.vscode/
+src/__pycache__/

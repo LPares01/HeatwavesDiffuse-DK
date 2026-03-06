@@ -36,9 +36,9 @@ module load cuda/11.6
 
 # in case you have created a virtual environment,
 # activate it first:
-source /zhome/98/d/202490/Documents/Thesis/clim-dif/bin/activate
+source /path/to/your/venv/bin/activate
 
 # use this for just piping everything into a file, 
 # the program knows then, that it's outputting to a file
 # and not to a screen, and also combine stdout&stderr
-python /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/src/TrainDiffusion.py > /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/.lsf_jobs/joboutput_$LSB_JOBID.out 2>&1
+python ./TrainDiffusion.py > ../.lsf_jobs/joboutput_$LSB_JOBID.out 2>&1

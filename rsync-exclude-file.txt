@@ -1,9 +1,6 @@
 .lsf_jobs
-examples/Models_unet_DK
 examples/runs*
 src/runs*
 data/CERRA-ERA5/[CEo]*
-data/samples*
 wandb
 src/__pycache__
-Model_chpt

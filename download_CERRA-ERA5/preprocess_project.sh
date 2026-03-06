@@ -1,17 +1,17 @@
 #!/bin/bash
 
-grid_file=/dmidata/users/lucpar/MASTER_THESIS/projects/ClimateDiffuse_sync/download_CERRA-ERA5/cerra_grid.txt
-src_path=/net/isilon/ifs/arch/home/jis
+grid_file=./cerra_grid.txt
+src_path=/write/your/own/path/
 datasets=(cerra era5)
 stats=(max)
 
 # Working configuration
-dest_path=/dmidata/users/lucpar/MASTER_THESIS/data
+dest_path=../data/CERRA-ERA5
 years=({1985..2020})
 months=({01..12})
 
 # Testing configuration
-# dest_path=/dmidata/users/lucpar/MASTER_THESIS/data/test
+# dest_path=../data/test
 # years=1985
 # months=04
 # echo "Testing"

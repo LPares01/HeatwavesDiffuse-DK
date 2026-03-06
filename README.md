@@ -1,50 +1,25 @@
-## Generative diffusion-based downscaling for climate
-### Robbie A. Watt & Laura A. Mansfield      <https://arxiv.org/abs/2404.17752>
+## Surface Temperature Downscaling for Heatwave Detection using Deep-Learning Models
+### Luc Pares, based on an implementation by Robbie A. Watt & Laura A. Mansfield <https://arxiv.org/abs/2404.17752>
 
-![plot](./example.png)
+![plot](./downscaling_ex.png)
 
-This repo contains code to go alongside Watt & Mansfield (2024) preprint. In this preprint, we apply a diffusion based model and a Unet to a downscaling problem with climate data. The diffusion model is based on the implementation by T. Karras et al. (<https://arxiv.org/abs/2206.00364>) and the code is addapted from <https://github.com/NVlabs/edm>.
+This repo contains code to go alongside my Master's Thesis, made in collaboration with the Danish Meteorological Institute, where I train a U-Net model to perform statistical downscaling on daily max. 2m-temperature for heatwave detection, with different learning setups. I compare the results with a Vision Transformer from the DeepR library (<https://github.com/ECMWFCode4Earth/DeepR>), as previously implemented at DMI. The  model is based on the implementation by T. Karras et al. (<https://arxiv.org/abs/2206.00364>) and the code is adapted from <https://github.com/NVlabs/edm>.
 
 
 ## File structure
-* src: contains code used to train model
-* inference: contains inference and plotting scripts 
-* Model_chpt: contains model checkpoints
-* download_ERA5: contains scripts for downloading ERA5 data and processing into netcdf files.
+* ./: The Jupyter notebook called `HW-thresholds.py` computes the thresholds used in the HW definition from a reference climatology. The two other Jupyter notebooks can be used for data analysis and post processing.
+* src: contains code used to train model and run files (including model weights)
+* inference: contains inference and plotting scripts -- only compute_spectrum.py was used for the project, the other scripts were left untouched
+* download_CERRA-ERA5: contains scripts for preprocessing the input data
 
 ## Usage
-### Download ERA5 data
-The script `download_ERA5/ERA5_download_my_dates_sfc.sh` downloads the variables (temperature at 2m and zonal and meridional winds at 100 hPa) for all years of ERA5 up to 2022 and saves files into a directory named `data/`. You may need to edit data directories. Note that we subsample in time to reduce the size of the dataset (see file `preprocessing_subsample.py`). Data is concatenated into yearly samples and saved as `samples_{year}.nc`. 
+### Download CERRA and ERA5 data
+The script `download_CERRA-ERA5/preprocess_project.sh` transforms the monthly files containing hourly data from ERA5 and CERRA (publicly accessible from the Copernicus Data Store) for all required years and saves files into a directory named `data/CERRA-ERA5/`. The file `download_CERRA-ERA5/generate_samples.sh` then create the samples for the models. You may need to edit data directories. 
 
-We also use variables that are constant in time for the land sea mask and the topography. These are currently stored in `data/ERA5_const_sfc_variables.nc` or can be manually downloaded from ERA5 Copernicus store ( https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form) by checking `geopotential` (z) and `land-sea mask` (lsm) (found under `Other`) and saving these to `netcdf`. 
-
-### Dependencies
-python>=3.9, torch, tensorboard, xarray, netcdf4, cartopy, matplotlib, scipy, numpy
+I also use variables that are constant in time for the land sea mask and the orography. These are currently stored in `data/CERRA-ERA5/cerra_const_sfc_variables.nc` or can be manually downloaded from CDS.
 
 ### Training
-To train either the diffusion or unet models from scratch, simply run the `src/TrainDiffusion.py` or `src/TrainUnet.py` script from the project root directory.
+To train either the U-Net from scratch, simply edit the configuration in `src/TrainUnet.py` script and run it from its parent directory. The `src/TrainDiffusion.py` script was not fully adapted.
 
 ### Inference
-After training, the inference scripts can be run in the following order:
-1. `save_test_truth.py`: this script simply processes the true test data to save it into one file for easier comparison to other variables
-2. `save_test_preds.py`: this script runs through all test data and saves the output into one file. You need to run this for each model. `modelname=UNet` for the standard UNet, `modelname=LinearInterpolation` for linear interpolation of coarse resolution variables onto the high resolution grid (i.e., the inputs to the model) and `modelname=Diffusion` for the diffusion model. When running the Diffusion model, we generate many possible samples in a loop, each seeded with a different random number, currently we loop over `rngs=range(0, 30)`.
-
-After running the above scripts, you should have files saved as `output/{modelname}/samples_2018-2023.nc` (or for diffusion, these are saved as `output/Diffusion/samples_{i}_2018-2023.nc` where `i` indexes the different generated samples).
-
-Plotting scripts:
-* `plot_timestep_examples.py` plots maps of methods for each timestep (used for Fig. 1).
-* `plot_error_metrics.py` plots maps of error metrics across full test dataset (Fig. 2) and prints the mean across the domain.
-* `plot_spectrum.py` plots the power spectrum for all methods (Fig. 3)
-
-
-## Citation
-```
-@misc{watt2024generative,
-      title={Generative Diffusion-based Downscaling for Climate}, 
-      author={Robbie A. Watt and Laura A. Mansfield},
-      year={2024},
-      eprint={2404.17752},
-      archivePrefix={arXiv},
-      primaryClass={physics.ao-ph}
-}
-```
+After training, the script `src/Inference.py` can be used to perform inference on the test samples.

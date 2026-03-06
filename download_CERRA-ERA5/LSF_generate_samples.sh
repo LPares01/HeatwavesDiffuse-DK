@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script for submitting the job to the DTU HPC
 # embedded options to bsub - start with #BSUB
 # -- our name ---
 #BSUB -J CERRA-ERA5_sample_generation
@@ -17,9 +18,9 @@
 # if you want to receive e-mail notifications on a non-default address
 #BSUB -u s232493@dtu.dk
 # -- Output File --
-#BSUB -o /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/.lsf_jobs/Output_%J.out
+#BSUB -o ../.lsf_jobs/Output_%J.out
 # -- Error File --
-#BSUB -e /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/.lsf_jobs/Output_%J.err
+#BSUB -e ../.lsf_jobs/Output_%J.err
 # -- estimated wall clock time (execution time): hh:mm -- 
 #BSUB -W 00:15
 # -- Number of cores requested -- 
@@ -33,9 +34,9 @@
 
 # in case you have created a virtual environment,
 # activate it first:
-source /zhome/98/d/202490/Documents/Thesis/clim-dif/bin/activate
+source path/to/your/venv/bin/activate
 
 # use this for just piping everything into a file, 
 # the program knows then, that it's outputting to a file
 # and not to a screen, and also combine stdout&stderr
-bash /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/download_CERRA-ERA5/generate_samples.sh > /zhome/98/d/202490/Documents/Thesis/ClimateDiffuse/.lsf_jobs/joboutput_$LSB_JOBID.out 2>&1
+bash generate_samples.sh > ../.lsf_jobs/joboutput_$LSB_JOBID.out 2>&1
