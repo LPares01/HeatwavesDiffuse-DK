@@ -4,7 +4,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
 # Load ERA5 data
-ds = xr.open_dataset('/dmidata/users/lucpar/MASTER_THESIS/report/figures/era5_example.nc4c', engine='netcdf4')
+ds = xr.open_dataset('/a/era5/nc/file', engine='netcdf4')
 
 # Select a specific time step
 t2m = ds['2t'].isel(time=0)
