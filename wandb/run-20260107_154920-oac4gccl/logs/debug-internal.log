@@ -1,6 +1,0 @@
-{"time":"2026-01-07T15:49:21.943204781+01:00","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
-{"time":"2026-01-07T15:49:22.480097865+01:00","level":"INFO","msg":"stream: created new stream","id":"oac4gccl"}
-{"time":"2026-01-07T15:49:22.480153579+01:00","level":"INFO","msg":"handler: started","stream_id":"oac4gccl"}
-{"time":"2026-01-07T15:49:22.482543631+01:00","level":"INFO","msg":"stream: started","id":"oac4gccl"}
-{"time":"2026-01-07T15:49:22.482617765+01:00","level":"INFO","msg":"sender: started","stream_id":"oac4gccl"}
-{"time":"2026-01-07T15:49:22.48261998+01:00","level":"INFO","msg":"writer: started","stream_id":"oac4gccl"}
