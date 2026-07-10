@@ -14,12 +14,12 @@ This repo contains code to go alongside my Master's Thesis, made in collaboratio
 
 ## Usage
 ### Download CERRA and ERA5 data
-The script `download_CERRA-ERA5/preprocess_project.sh` transforms the monthly files containing hourly data from ERA5 and CERRA (publicly accessible from the Copernicus Data Store) for all required years and saves files into a directory named `data/CERRA-ERA5/`. The file `download_CERRA-ERA5/generate_samples.sh` then create the samples for the models. You may need to edit data directories. 
+The script `download_CERRA-ERA5/preprocess_project.sh` transforms the monthly files containing hourly data from ERA5 and CERRA (publicly accessible from the Copernicus Data Store) for all required years and saves files into a directory named `data/CERRA-ERA5/`. The file `download_CERRA-ERA5/generate_samples.sh` then creates the samples for the models. You may need to edit data directories. 
 
-I also use variables that are constant in time for the land sea mask and the orography. These are currently stored in `data/CERRA-ERA5/cerra_const_sfc_variables.nc` or can be manually downloaded from CDS.
+I also use variables that are constant in time for the land sea mask and the orography. These are currently stored in `data/CERRA-ERA5/cerra_const_sfc_variables.nc` or can be manually downloaded from CDS ([https://cds.climate.copernicus.eu/](url)).
 
 ### Training
-To train either the U-Net from scratch, simply edit the configuration in `src/TrainUnet.py` script and run it from its parent directory. The `src/TrainDiffusion.py` script was not fully adapted.
+To train the U-Net from scratch, simply edit the configuration in `src/TrainUnet.py` script and run it from its parent directory. The `src/TrainDiffusion.py` script was not fully adapted.
 
 ### Inference
 After training, the script `src/Inference.py` can be used to perform inference on the test samples.
